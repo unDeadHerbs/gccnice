@@ -1,2 +1,3 @@
 #!/bin/sh
-g++ -fdiagnostics-format=json "$@" 2>&1 >/dev/null | python3 ./gccnice.py >&2
+BASEDIR=$(dirname "$0")
+g++ -fdiagnostics-format=json "$@" 2>&1 >/dev/null | python3 "$BASEDIR/gccnice.py" >&2
